@@ -10,23 +10,24 @@ const ImageList = [
     img: Image1,
     title: "Upto 50% off on all Men's Wear",
     description:
-      "lorem His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Upgrade your wardrobe with the latest trends in men’s fashion. Enjoy up to 50% off on shirts, jeans, jackets, and more!",
   },
   {
     id: 2,
     img: Image2,
     title: "30% off on all Women's Wear",
     description:
-      "Who's there lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Style meets savings! Get 30% off on dresses, tops, ethnic wear, and more. Shop now and redefine your look.",
   },
   {
     id: 3,
     img: Image3,
     title: "70% off on all Products Sale",
     description:
-      "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Don't miss our biggest sale! Grab up to 70% off on fashion, electronics, home essentials, and more – only for a limited time.",
   },
 ];
+
 
 const Hero = ({ handleOrderPopup }) => {
   var settings = {

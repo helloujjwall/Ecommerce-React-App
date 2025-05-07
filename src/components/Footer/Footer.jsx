@@ -1,129 +1,91 @@
 import React from "react";
-// import footerLogo from "../../assets/logo.png";
-// import Banner from "../../assets/website/footer-pattern.jpg";
 import { FiShoppingBag } from "react-icons/fi";
-import { FaMapLocationDot } from "react-icons/fa6";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaLocationArrow,
-  FaMobileAlt,
-} from "react-icons/fa";
+import { FaMapLocationDot, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
 
-// const BannerImg = {
-//   backgroundImage: `url(${Banner})`,
-//   backgroundPosition: "bottom",
-//   backgroundRepeat: "no-repeat",
-//   backgroundSize: "cover",
-//   height: "100%",
-//   width: "100%",
-// };
-
+// Footer links
 const FooterLinks = [
-  {
-    title: "Home",
-    link: "/#",
-  },
-  {
-    title: "About",
-    link: "/#about",
-  },
-  {
-    title: "Contact",
-    link: "/#contact",
-  },
-  {
-    title: "Blog",
-    link: "/#blog",
-  },
+  { title: "Home", link: "/#" },
+  { title: "About", link: "/#about" },
+  { title: "Contact", link: "/#contact" },
+  { title: "Blog", link: "/#blog" },
 ];
 
 const Footer = () => {
   return (
-    <div className="text-white bg-[#212529]">
-      <div className="container">
-        <div data-aos="zoom-in" className="grid md:grid-cols-3 pb-44 pt-5">
-          {/* company details */}
-          <div className="py-8 px-4">
-            <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-1">
-              <FiShoppingBag size="30" />
-              {/* <img src={footerLogo} alt="" className="max-w-[50px]" /> */}
-              ShopMe
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
-              beatae ea recusandae blanditiis veritatis.
-            </p>
+    <footer className="bg-[#212529] text-white pt-10 pb-16">
+      <div className="container mx-auto px-4 grid md:grid-cols-3 gap-10">
+        {/* Logo and About */}
+        <div>
+          <h1 className="text-2xl font-bold flex items-center gap-2 mb-4">
+            <FiShoppingBag size={28} />
+            ShopMe
+          </h1>
+          <p className="text-gray-300">
+            ShopMe is your trusted e-commerce partner offering top-quality fashion, electronics,
+            and daily essentials—all at unbeatable prices with fast delivery.
+          </p>
+          <p className="mt-4 text-sm">
+            Developed by{" "}
+            <a
+              href="https://ujjwalsingh.rf.gd/"
+              className="text-blue-400 hover:underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ujjwal Singh
+            </a>
+          </p>
+        </div>
+
+        {/* Footer Navigation */}
+        <div className="grid grid-cols-2 gap-6">
+          <div>
+            <h2 className="text-xl font-semibold mb-3">Quick Links</h2>
+            <ul className="space-y-2">
+              {FooterLinks.map((link) => (
+                <li key={link.title}>
+                  <a
+                    href={link.link}
+                    className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
           </div>
+          <div>
+            <h2 className="text-xl font-semibold mb-3">Explore</h2>
+            <ul className="space-y-2">
+              <li className="text-gray-300 hover:text-white cursor-pointer">Deals of the Day</li>
+              <li className="text-gray-300 hover:text-white cursor-pointer">Gift Cards</li>
+              <li className="text-gray-300 hover:text-white cursor-pointer">Return Policy</li>
+              <li className="text-gray-300 hover:text-white cursor-pointer">Affiliate Program</li>
+            </ul>
+          </div>
+        </div>
 
-          {/* Footer Links */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 col-span-2 md:pl-10">
-            <div>
-              <div className="py-8 px-4">
-                <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
-                  Important Links
-                </h1>
-                <ul className="flex flex-col gap-3">
-                  {FooterLinks.map((link) => (
-                    <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
-                      key={link.title}
-                    >
-                      <span>{link.title}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div>
-              <div className="py-8 px-4">
-                <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
-                  Links
-                </h1>
-                <ul className="flex flex-col gap-3">
-                  {FooterLinks.map((link) => (
-                    <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
-                      key={link.title}
-                    >
-                      <span>{link.title}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* social links */}
-
-            <div>
-              <div className="flex items-center gap-3 mt-6">
-                <a href="#">
-                  <FaInstagram className="text-3xl" />
-                </a>
-                <a href="#">
-                  <FaFacebook className="text-3xl" />
-                </a>
-                <a href="#">
-                  <FaLinkedin className="text-3xl" />
-                </a>
-              </div>
-              <div className="mt-6">
-                <div className="flex items-center gap-3">
-                  <FaMapLocationDot />
-                  <p>Indore, Madhya Pradesh</p>
-                </div>
-                <div className="flex items-center gap-3 mt-3">
-                  <IoCall />
-                  <p>+91 123456789</p>
-                </div>
-              </div>
-            </div>
+        {/* Contact & Social */}
+        <div>
+          <h2 className="text-xl font-semibold mb-3">Connect With Us</h2>
+          <div className="flex gap-4 text-2xl mb-4">
+            <a href="#"><FaInstagram /></a>
+            <a href="#"><FaFacebook /></a>
+            <a href="#"><FaLinkedin /></a>
+          </div>
+          <div className="flex items-center gap-2 mb-3">
+            <FaMapLocationDot />
+            <p>Bareilly, Uttar Pradesh, India</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <IoCall />
+            <p>+91 83550 68389</p>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
