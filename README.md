@@ -27,5 +27,5 @@ npm run dev
 ```
 
 ### 4. Live Demo:
-For a live demo of the project, visit [QuickDealz Live Demo](https://your-live-demo-link.com).
+For a live demo of the project, visit [QuickDealz Live Demo](https://quickdealz-react-app.netlify.app).
 
